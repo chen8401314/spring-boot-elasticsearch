@@ -133,7 +133,7 @@ public class TestController {
         searchSourceBuilder.sort("id", SortOrder.ASC);
         searchRequest.source(searchSourceBuilder);
         //指定index和type
-        searchRequest.indices("test10_doc").types("doc").source(searchSourceBuilder);
+        searchRequest.indices("test_index").types("_doc").source(searchSourceBuilder);
         SearchResponse sr = client.search(searchRequest).actionGet();
 
         SearchHits hits = sr.getHits();
